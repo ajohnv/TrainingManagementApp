@@ -1,0 +1,81 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+
+<!--Top Form-->
+ <div class="card card-chart">
+  <div class="card-header ">
+    <div class="row">
+      <div class="col-sm-6 text-left">
+        <h4 class="card-title">Subjects <button type="button"  class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#addSubjectModal">Add Subjects</button></h4>
+      </div>
+    </div>
+  </div>
+</div>
+      <!-- <form [formGroup]="subjectsForm" (ngSubmit)="onSubmit()">
+        <div formGroupName="subjectData">
+          <div class="form-group">
+            <label for="subjectName">Subject</label>
+            <input
+              type="text"
+              id="subjectName"
+              formControlName="subjectName"
+              class="form-control">
+            </div>
+            <button class="btn btn-primary" type="submit">Submit</button>
+          </div>
+          </form> -->
+    </div>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Subject</th>
+          <th scope="col">Remarks</th>
+        </tr>
+
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let subject of subjects" >
+          <td>{{subject.subjectName}}</td>
+          <td>{{subject.remarks}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+<!--Begining of subject modal Form-->
+<div class="modal fade" id="addSubjectModal" tabindex="-1" aria-labelledby="addSubjectModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form id="addFacultyForm" [formGroup]="subjectsForm" (ngSubmit)="onSubmit()">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="addSubjectModalLabel">Add Subject</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- <form id="addFacultyForm"> -->
+          <div class="modal-body">
+              <div class="form-group" formGroupName="nameFormGroup">
+                  <label for="name" class="col-form-label">Subject Name:</label>
+                  <input type="text" class="form-control" id="name" formControlName="subjectName" required>
+              </div>
+              <div class="form-group" formGroupName="remarksFormGroup">
+                  <label for="remarks" class="col-form-label">Remarks:</label>
+                  <input type="text" class="form-control" id="remarks" formControlName="subjectRemarks" required>
+                  <!-- <button type="submit" id="submit-button" class="hide" style="display:none"></button> -->
+              </div>
+          </div>
+      <!-- </form> -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
+<!--End of modal-->
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<!-- <div class="row">
+  <div class="col-xs-12">
+    <button class="btn btn-primary">New Faculty</button>
+  </div>
+</div> -->
+<hr>
+<div class="row">
+  <div class="col-xs-12">
+    <a
+      href="#"
+      class="list-group-item clearfix"
+      *ngFor="let faculty of faculties">
+      <div class="card" style="width:400px; margin:5px; background-color: lightgrey;">
+        <h4 class="list-group-item-heading">{{ faculty.facultyName }}</h4>
+        <div class="horizontal" *ngFor="let subject of faculty.subjects">
+          <div>
+            <span class="badge bg-secondary">{{ subject }}</span>
+          </div>
+        </div>
+        <p class="list-group-item-text">{{ faculty.remarks }}</p>
+      </div>
+      <span class="pull-right">
+        <!-- <img
+          [src]="recipe.imagePath"
+          alt="{{ recipe.name }}"
+          class="img-responsive"
+          style="max-height: 50px;"> -->
+      </span>
+    </a>
+    <app-faculty-item></app-faculty-item>
+
+  </div>
+</div>
